@@ -1,0 +1,176 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  border: var(--border-1) solid transparent;
+  border-radius: var(--radius-lg);
+  transition: var(--transition-colors), transform var(--duration-fast) var(--ease-spring), box-shadow var(--duration-normal) var(--ease-inout);
+  text-decoration: none;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.button:not(:disabled):active {
+  transform: scale(0.97);
+}
+
+/* ── Sizes ─────────────────────────────────────────── */
+
+.sm {
+  height: 32px;
+  padding: 0 var(--space-3);
+  font-size: var(--text-xs);
+  border-radius: var(--radius-md);
+}
+
+.md {
+  height: 40px;
+  padding: 0 var(--space-4);
+  font-size: var(--text-sm);
+}
+
+.lg {
+  height: 48px;
+  padding: 0 var(--space-6);
+  font-size: var(--text-md);
+}
+
+.xl {
+  height: 56px;
+  padding: 0 var(--space-8);
+  font-size: var(--text-lg);
+  border-radius: var(--radius-xl);
+}
+
+/* ── Variants ──────────────────────────────────────── */
+
+/* Primary */
+.primary {
+  background-color: var(--color-brand);
+  border-color: var(--color-brand);
+  color: var(--color-brand-fg);
+  box-shadow: var(--shadow-sm);
+}
+.primary:not(:disabled):hover {
+  background-color: var(--color-brand-hover);
+  border-color: var(--color-brand-hover);
+  box-shadow: var(--shadow-brand-glow);
+}
+
+/* Secondary */
+.secondary {
+  background-color: var(--color-bg-elevated);
+  border-color: var(--color-border-muted);
+  color: var(--color-fg-default);
+}
+.secondary:not(:disabled):hover {
+  background-color: var(--color-bg-overlay);
+  border-color: var(--color-border-emphasis);
+  color: var(--color-fg-default);
+}
+
+/* Ghost */
+.ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-fg-muted);
+}
+.ghost:not(:disabled):hover {
+  background-color: var(--color-bg-overlay);
+  color: var(--color-fg-default);
+}
+
+/* Outline */
+.outline {
+  background-color: transparent;
+  border-color: var(--color-brand);
+  color: var(--color-brand);
+}
+.outline:not(:disabled):hover {
+  background-color: var(--color-brand-subtle);
+  color: var(--color-brand-hover);
+}
+
+/* Danger */
+.danger {
+  background-color: var(--color-danger);
+  border-color: var(--color-danger);
+  color: var(--color-danger-fg);
+}
+.danger:not(:disabled):hover {
+  background-color: var(--color-danger-hover);
+  border-color: var(--color-danger-hover);
+  box-shadow: var(--shadow-danger-glow);
+}
+
+/* Danger Ghost */
+.dangerGhost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-danger);
+}
+.dangerGhost:not(:disabled):hover {
+  background-color: var(--color-danger-subtle);
+}
+
+/* Success */
+.success {
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+  color: var(--color-success-fg);
+}
+.success:not(:disabled):hover {
+  background-color: var(--color-success-hover);
+  box-shadow: var(--shadow-success-glow);
+}
+
+/* ── Full width ─────────────────────────────────────── */
+
+.fullWidth {
+  width: 100%;
+}
+
+/* ── Loading ────────────────────────────────────────── */
+
+.loading {
+  cursor: wait;
+  pointer-events: none;
+}
+
+.spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: var(--radius-full);
+  animation: spin var(--duration-slow) linear infinite;
+}
+
+/* ── Icon-only ──────────────────────────────────────── */
+
+.iconOnly.sm  { width: 32px; padding: 0; }
+.iconOnly.md  { width: 40px; padding: 0; }
+.iconOnly.lg  { width: 48px; padding: 0; }
+.iconOnly.xl  { width: 56px; padding: 0; }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

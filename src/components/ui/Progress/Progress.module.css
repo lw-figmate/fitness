@@ -1,0 +1,96 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.label {
+  font-size: var(--text-sm);
+  font-weight: var(--fw-medium);
+  color: var(--color-fg-default);
+}
+
+.value {
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-fg-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.track {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-bg-overlay);
+  border-radius: var(--radius-full);
+}
+
+/* Sizes */
+.xs .track  { height: 4px; }
+.sm .track  { height: 6px; }
+.md .track  { height: 8px; }
+.lg .track  { height: 12px; }
+.xl .track  { height: 16px; }
+
+.fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--duration-moderate) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer animation for animated variant */
+.fill.animated::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(50%); }
+}
+
+/* Color variants */
+.brand       { background-color: var(--color-brand); }
+.success     { background-color: var(--color-success); }
+.warning     { background-color: var(--color-warning); }
+.danger      { background-color: var(--color-danger); }
+.info        { background-color: var(--color-info); }
+.strength    { background-color: var(--color-cat-strength); }
+.cardio      { background-color: var(--color-cat-cardio); }
+.flexibility { background-color: var(--color-cat-flexibility); }
+.hiit        { background-color: var(--color-cat-hiit); }
+
+/* Gradient variant */
+.gradient {
+  background: linear-gradient(90deg, var(--color-brand) 0%, var(--color-accent) 100%);
+}
+
+/* Striped variant */
+.striped {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 6px,
+    rgba(255,255,255,0.15) 6px,
+    rgba(255,255,255,0.15) 12px
+  );
+}

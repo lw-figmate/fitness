@@ -1,0 +1,105 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-sans);
+  font-weight: var(--fw-semibold);
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: var(--radius-full);
+  border: var(--border-1) solid transparent;
+  letter-spacing: var(--ls-wide, 0.025em);
+}
+
+/* ── Sizes ─────────────────────────────────────────── */
+
+.sm {
+  height: 18px;
+  padding: 0 var(--space-1-5);
+  font-size: var(--text-2xs);
+}
+
+.md {
+  height: 22px;
+  padding: 0 var(--space-2);
+  font-size: var(--text-xs);
+}
+
+.lg {
+  height: 28px;
+  padding: 0 var(--space-3);
+  font-size: var(--text-sm);
+}
+
+/* ── Variants: solid ────────────────────────────────── */
+
+.info {
+  background-color: var(--color-info);
+  color: var(--color-info-fg);
+}
+
+.success {
+  background-color: var(--color-success);
+  color: var(--color-success-fg);
+}
+
+.warning {
+  background-color: var(--color-warning);
+  color: var(--color-warning-fg);
+}
+
+.danger {
+  background-color: var(--color-danger);
+  color: var(--color-danger-fg);
+}
+
+.brand {
+  background-color: var(--color-brand);
+  color: var(--color-brand-fg);
+}
+
+.neutral {
+  background-color: var(--color-bg-overlay);
+  color: var(--color-fg-muted);
+  border-color: var(--color-border-muted);
+}
+
+/* Fitness categories */
+.strength {
+  background-color: var(--color-cat-strength);
+  color: #09090B;
+}
+.cardio {
+  background-color: var(--color-cat-cardio);
+  color: #09090B;
+}
+.flexibility {
+  background-color: var(--color-cat-flexibility);
+  color: #09090B;
+}
+.hiit {
+  background-color: var(--color-cat-hiit);
+  color: #FFFFFF;
+}
+.rest {
+  background-color: var(--color-cat-rest);
+  color: #FFFFFF;
+}
+
+/* ── Variant: subtle ────────────────────────────────── */
+
+.subtle.info      { background-color: var(--color-info-muted);    color: var(--color-info-text);    border-color: var(--color-info); }
+.subtle.success   { background-color: var(--color-success-muted); color: var(--color-success-text); border-color: var(--color-success); }
+.subtle.warning   { background-color: var(--color-warning-muted); color: var(--color-warning-text); border-color: var(--color-warning); }
+.subtle.danger    { background-color: var(--color-danger-muted);  color: var(--color-danger-text);  border-color: var(--color-danger); }
+.subtle.brand     { background-color: var(--color-brand-muted);   color: var(--color-brand-emphasis); border-color: var(--color-brand); }
+
+/* ── Dot indicator ───────────────────────────────────── */
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: currentColor;
+  flex-shrink: 0;
+}
