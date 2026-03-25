@@ -1,11 +1,27 @@
 {
-  "name": "fitness-tracker",
-  "private": true,
-  "version": "0.1.0",
+  "name": "@laurelma/fitness",
+  "version": "1.0.0",
   "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./dist/fitness.css": "./dist/fitness.css"
+  },
+  "files": [
+    "dist",
+    "guidelines.md"
+  ],
+  "sideEffects": ["**/*.css"],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:lib": "vite build --config vite.lib.config.ts",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -13,12 +29,12 @@
     "drift": "tsx scripts/figma-drift.ts",
     "drift:fix": "tsx scripts/figma-drift.ts --fix"
   },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
   "dependencies": {
-    "date-fns": "^3.6.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.28.1",
-    "recharts": "^2.13.3"
+    "date-fns": "^3.6.0"
   },
   "devDependencies": {
     "@figma/code-connect": "^1.4.2",
@@ -31,9 +47,14 @@
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.1",
+    "recharts": "^2.13.3",
     "storybook": "^8.6.14",
     "tsx": "^4.21.0",
     "typescript": "~5.6.2",
-    "vite": "^6.0.5"
+    "vite": "^6.0.5",
+    "vite-plugin-dts": "^4.5.4"
   }
 }
