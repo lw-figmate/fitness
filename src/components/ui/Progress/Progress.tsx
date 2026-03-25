@@ -12,6 +12,7 @@ export type ProgressColor =
   | 'flexibility'
   | 'hiit'
   | 'gradient'
+  | 'rest'
 
 export type ProgressSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 

@@ -13,6 +13,7 @@ export type BadgeVariant =
   | 'flexibility'
   | 'hiit'
   | 'rest'
+  | 'default'
 
 export type BadgeSize = 'sm' | 'md' | 'lg'
 export type BadgeAppearance = 'solid' | 'subtle'
