@@ -5,7 +5,6 @@ import Badge from '../../ui/Badge/Badge'
 import Progress from '../../ui/Progress/Progress'
 import styles from './GoalCard.module.css'
 import type { Goal } from '../../../types'
-import { IconTarget, IconCheckCircle } from '../../icons'
 
 interface GoalCardProps {
   goal: Goal
@@ -48,16 +47,6 @@ const GoalCard: React.FC<GoalCardProps> = ({ goal }) => {
       <div className={styles.wrapper}>
         <div className={styles.header}>
           <div className={styles.titleGroup}>
-            <div
-              className={styles.iconWrap}
-              style={{ backgroundColor: `${color}22` }}
-            >
-              {goal.completed ? (
-                <IconCheckCircle size={20} color={color} />
-              ) : (
-                <IconTarget size={20} color={color} />
-              )}
-            </div>
             <div>
               <div className={styles.title}>{goal.title}</div>
               {goal.description && (
@@ -65,17 +54,11 @@ const GoalCard: React.FC<GoalCardProps> = ({ goal }) => {
               )}
             </div>
           </div>
-          <div className={styles.meta}>
-            <div className={styles.valueGroup}>
-              <span className={styles.value}>{goal.currentValue}</span>
-              <span className={styles.unit}>/ {goal.targetValue} {goal.unit}</span>
-            </div>
-            {daysLeft !== null && !goal.completed && (
-              <Badge variant={urgency ?? 'neutral'} size="sm" appearance="subtle">
-                {daysLeft > 0 ? `${daysLeft}d left` : 'Overdue'}
-              </Badge>
-            )}
-          </div>
+          {daysLeft !== null && !goal.completed && (
+            <Badge variant={urgency ?? 'neutral'} size="sm" appearance="subtle">
+              {daysLeft > 0 ? `${daysLeft}d left` : 'Overdue'}
+            </Badge>
+          )}
         </div>
 
         <Progress

@@ -32,16 +32,6 @@
 .rank.silver { color: #A1A1AA; }
 .rank.bronze { color: #92400E; }
 
-.icon {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
 .info {
   flex: 1;
   min-width: 0;

@@ -2,7 +2,6 @@ import React from 'react'
 import { format, parseISO } from 'date-fns'
 import styles from './PRList.module.css'
 import type { PersonalRecord } from '../../../types'
-import { IconTrophy, IconDumbbell } from '../../icons'
 
 interface PRListProps {
   records: PersonalRecord[]
@@ -26,13 +25,7 @@ const PRList: React.FC<PRListProps> = ({ records, maxItems = 5 }) => {
         return (
           <div key={pr.id} className={styles.item} tabIndex={0}>
             <div className={`${styles.rank} ${rankClass(i)}`}>
-              {i < 3 ? <IconTrophy size={14} /> : i + 1}
-            </div>
-            <div
-              className={styles.icon}
-              style={{ backgroundColor: 'var(--color-bg-overlay)' }}
-            >
-              <IconDumbbell size={18} color="var(--color-fg-muted)" />
+              {i + 1}
             </div>
             <div className={styles.info}>
               <div className={styles.name}>{pr.exerciseName}</div>

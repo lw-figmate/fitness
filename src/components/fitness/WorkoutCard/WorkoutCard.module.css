@@ -39,17 +39,6 @@
   color: var(--color-fg-subtle);
 }
 
-.categoryDot {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: #FFFFFF;
-}
-
 .stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
